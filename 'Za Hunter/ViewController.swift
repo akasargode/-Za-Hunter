@@ -86,6 +86,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             }
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocationDetailsViewController {
             destination.selectedMapItem = selectedMapItem
