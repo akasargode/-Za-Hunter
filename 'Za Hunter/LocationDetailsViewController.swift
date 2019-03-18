@@ -14,7 +14,10 @@ class LocationDetailsViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
-    
+    @IBAction func onDirectionsButtonTapped(_ sender: UIButton) {
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+        MKMapItem.openMaps(with: [selectedMapItem], launchOptions: launchOptions)
+    }
     var mapItems = MKMapItem()
     var selectedMapItem = MKMapItem()
     override func viewDidLoad() {
@@ -31,4 +34,5 @@ class LocationDetailsViewController: UIViewController {
         addressLabel.text = address
         phoneLabel.text = selectedMapItem.phoneNumber
     }
+    
 }
